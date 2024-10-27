@@ -1,0 +1,32 @@
+/* Initial css */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* text */
+    --font-family-primary: "Poppins", serif;
+    --text-primary-color: #000;
+
+    /* button*/
+    --button-primary-color: #FD6F00;
+    --button-text-primary-color: #ffffff;
+
+    /* Background Color */
+    --background-color-primary: #ffff;
+}
+
+html {
+    font-family: var(--font-family-primary);
+    font-size: 62.5%;
+}
+
+body {
+    width: 1420px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+    font-size: 1.6rem;
+}
+
+/* css common */
