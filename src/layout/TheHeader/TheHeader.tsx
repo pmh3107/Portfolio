@@ -8,7 +8,7 @@ const TheHeader = () => {
 		<Header>
 			<Logo />
 			<Navbar />
-			<CustomButton type="primary" name="Download CV" />
+			<CustomButton type="primary">Download CV</CustomButton>
 		</Header>
 	);
 };

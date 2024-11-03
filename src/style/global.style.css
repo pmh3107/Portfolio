@@ -8,7 +8,7 @@
     /* text */
     --font-family-primary: "Poppins", serif;
     --text-primary-color: #000;
-
+    --text-secondary-color: #FD6F00;
     /* button*/
     --button-primary-color: #FD6F00;
     --button-text-primary-color: #ffffff;
@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    width: 1420px;
+    width: 1440px;
     max-width: calc(100% - 48px);
     margin: 0 auto;
     font-size: 1.6rem;

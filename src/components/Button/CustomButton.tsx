@@ -1,14 +1,16 @@
 import { Button } from "antd";
-import { ReactNode } from "react";
 import styled, { css } from "styled-components";
+import { TEXT } from "../../enum/TextEnum";
+import { DataText } from "../../style/DataText";
 
 interface propsType {
-	name: string;
+	children: React.ReactNode;
 	onClick?: () => void;
-	icon?: ReactNode;
-	type?: "primary" | "default" | "text";
+	icon?: React.ReactNode;
+	type: "primary" | "default" | "text";
 }
-
+const { paragraph } = DataText;
+const dataText = paragraph.find((item) => item.type === TEXT.P2);
 const ButtonStyle = styled(Button)`
 	${(props) =>
 		props.type === "primary" &&
@@ -16,23 +18,24 @@ const ButtonStyle = styled(Button)`
 			background-color: var(--button-primary-color) !important;
 			border: none;
 			color: var(--button-text-primary-color) !important;
-			font-size: 2.1rem;
-			font-weight: 400;
-			line-height: 1.7rem;
+			font-size: ${dataText?.frontSize}rem;
+			font-weight: ${dataText?.frontWeight};
+			line-height: ${dataText?.lineHeight}rem;
+			min-height: 52px;
 			padding: 18px;
 			min-width: 188px;
 		`}
+	font-family: var(--font-family-primary);
 	&:hover {
 		opacity: 0.8;
 	}
 `;
 
 const CustomButton = (props: propsType) => {
-	const { type, name, onClick, icon } = props;
-
+	const { type, children, onClick, icon } = props;
 	return (
 		<ButtonStyle onClick={onClick} icon={icon} type={type}>
-			{name}
+			{children}
 		</ButtonStyle>
 	);
 };

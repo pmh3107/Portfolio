@@ -1,15 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import { LogoUser } from "./LogoUI";
-
+import LogoIcon from "../../assets/images/IconHienPhan.svg";
+import { LogoImg, LogoUser } from "./LogoUI";
 const Logo = () => {
-	// change to home page
-	const navigate = useNavigate();
-	const handleClickLogo = () => {
-		navigate("/");
-	};
 	return (
-		<LogoUser type="text" onClick={handleClickLogo}>
-			HienPhan
+		<LogoUser to={"/"}>
+			<LogoImg src={LogoIcon} />
 		</LogoUser>
 	);
 };

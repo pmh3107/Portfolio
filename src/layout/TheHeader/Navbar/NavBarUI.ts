@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { DataText } from "../../../style/DataText";
+import { TEXT } from "../../../enum/TextEnum";
 
+const { paragraph } = DataText;
+// using custom paragraph 1
+const dataParagraph = paragraph.find((item) => item.type === TEXT.P2);
 export const NavbarContainer = styled.nav`
 	margin: 0 20px;
 `;
@@ -14,9 +19,9 @@ export const NavbarItems = styled.li`
 `;
 export const NavbarLink = styled(NavLink)`
 	color: var(--text-primary-color);
-	font-size: 2.1rem;
-	font-weight: 400;
-	line-height: 3.2rem;
+	font-size: ${dataParagraph?.frontSize}rem;
+	font-weight: ${dataParagraph?.frontWeight};
+	line-height: ${dataParagraph?.lineHeight}rem;
 
 	&.active {
 		border-bottom: 2px solid var(--text-primary-color);
