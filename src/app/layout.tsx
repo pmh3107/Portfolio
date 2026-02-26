@@ -3,7 +3,7 @@ import "./globals.css";
 import { portfolioData } from "@/data/portfolio";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { LiquidBlobsBackground } from "@/components/visual/LiquidBlobsBackground";
+import { ParticleFieldBackground } from "@/components/visual/ParticleFieldBackground";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="vi">
-      <body className="bg-slate-950 text-slate-100">
+      <body className="bg-white text-slate-100 dark:bg-slate-950 dark:text-slate-100">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
         <a
           href="#main-content"
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        <LiquidBlobsBackground />
+        <ParticleFieldBackground />
         <Navbar />
         {children}
         <Footer />
