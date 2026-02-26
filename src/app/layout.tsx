@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="vi">
-      <body className="bg-white text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <body className="bg-slate-950 text-slate-100">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
         <a
           href="#main-content"
@@ -38,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <ParticleFieldBackground />
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.12),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(168,85,247,0.10),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.10),transparent_35%)]" />
         <Navbar />
         {children}
         <Footer />

@@ -5,7 +5,7 @@ export function Card({ children, className }: { children: ReactNode; className?:
   return (
     <article
       className={cn(
-        "rounded-strong border border-white/50 bg-white/60 p-6 shadow-frosted backdrop-blur-md dark:border-white/10 dark:bg-slate-900/60",
+        "rounded-3xl border border-white/20 bg-black/25 p-6 text-slate-100 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-white/35",
         className,
       )}
     >

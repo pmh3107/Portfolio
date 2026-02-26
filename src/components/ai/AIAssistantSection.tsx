@@ -13,20 +13,24 @@ export function AIAssistantSection() {
       <SectionHeading
         id="ai-title"
         eyebrow="Smart AI Assistant"
-        title="Trợ lý AI cho nhà tuyển dụng"
-        description="Hỏi nhanh về kinh nghiệm của Hiển hoặc dán JD để đánh giá mức độ phù hợp ngay lập tức."
+        title="Recruiter-ready AI helper"
+        description="Hỏi nhanh về CV hoặc dán JD để có đánh giá mức độ phù hợp theo cấu trúc rõ ràng."
       />
 
-      <div className="mb-4 flex gap-2">
+      <div className="mb-5 inline-flex rounded-2xl border border-white/20 bg-black/20 p-1 backdrop-blur-lg">
         <button
           onClick={() => setTab("chat")}
-          className={`rounded-soft px-4 py-2 text-sm font-semibold ${tab === "chat" ? "bg-primary text-white" : "border border-slate-300 dark:border-slate-700"}`}
+          className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+            tab === "chat" ? "bg-white/20 text-white" : "text-slate-300 hover:text-white"
+          }`}
         >
           Chat with CV
         </button>
         <button
           onClick={() => setTab("match")}
-          className={`rounded-soft px-4 py-2 text-sm font-semibold ${tab === "match" ? "bg-primary text-white" : "border border-slate-300 dark:border-slate-700"}`}
+          className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+            tab === "match" ? "bg-white/20 text-white" : "text-slate-300 hover:text-white"
+          }`}
         >
           JD Matcher
         </button>

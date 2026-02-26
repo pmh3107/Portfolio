@@ -32,20 +32,20 @@ export function JDMatcher() {
           onChange={(event) => setJd(event.target.value)}
           rows={8}
           placeholder="Dán Job Description tại đây..."
-          className="w-full rounded-soft border border-slate-300 bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:border-slate-700"
+          className="w-full rounded-2xl border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
         />
 
         <button
           onClick={onAnalyze}
           disabled={loading}
-          className="inline-flex items-center gap-2 rounded-soft bg-primary px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-60"
         >
           <Sparkles size={16} /> {loading ? "Đang phân tích..." : "Phân tích mức độ phù hợp"}
         </button>
 
-        <div className="rounded-soft border border-slate-200 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-900/60">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent">Kết quả AI</p>
-          <pre className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200">{result || "Kết quả sẽ hiển thị ở đây."}</pre>
+        <div className="rounded-2xl border border-white/20 bg-black/20 p-4">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-cyan-200">Kết quả AI</p>
+          <pre className="whitespace-pre-wrap text-sm text-slate-100">{result || "Kết quả sẽ hiển thị ở đây."}</pre>
         </div>
       </div>
     </Card>

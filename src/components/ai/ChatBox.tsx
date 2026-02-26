@@ -15,21 +15,19 @@ export function ChatBox() {
 
   const onSend = async () => {
     if (!input.trim() || loading) return;
-    const nextHistory: ChatHistoryItem[] = [...messages, { role: "user", content: input.trim() }];
+    const prompt = input.trim();
+    const nextHistory: ChatHistoryItem[] = [...messages, { role: "user", content: prompt }];
     setMessages(nextHistory);
     setInput("");
     setLoading(true);
 
     try {
-      const response = await askGemini({ type: "chat", prompt: input.trim(), history: nextHistory });
+      const response = await askGemini({ type: "chat", prompt, history: nextHistory });
       setMessages((prev) => [...prev, { role: "assistant", content: response.output }]);
     } catch (error) {
       setMessages((prev) => [
         ...prev,
-        {
-          role: "assistant",
-          content: `Xin lỗi, hiện chưa thể phản hồi. ${(error as Error).message}`,
-        },
+        { role: "assistant", content: `Xin lỗi, hiện chưa thể phản hồi. ${(error as Error).message}` },
       ]);
     } finally {
       setLoading(false);
@@ -43,10 +41,10 @@ export function ChatBox() {
           {messages.map((message, index) => (
             <div
               key={`${message.role}-${index}`}
-              className={`max-w-[90%] rounded-soft px-3 py-2 text-sm ${
+              className={`max-w-[92%] rounded-2xl px-3 py-2 text-sm ${
                 message.role === "user"
-                  ? "ml-auto bg-primary text-white"
-                  : "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100"
+                  ? "ml-auto border border-cyan-200/40 bg-cyan-300/20 text-white"
+                  : "border border-white/15 bg-white/10 text-slate-100"
               }`}
             >
               {message.content}
@@ -63,13 +61,13 @@ export function ChatBox() {
               if (event.key === "Enter") onSend();
             }}
             placeholder="Ví dụ: Hiển có kinh nghiệm gì về React Native?"
-            className="w-full rounded-soft border border-slate-300 bg-transparent px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:border-slate-700"
+            className="w-full rounded-2xl border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           />
           <button
             aria-label="Send message"
             onClick={onSend}
             disabled={loading}
-            className="rounded-soft bg-primary px-3 text-white disabled:cursor-not-allowed disabled:opacity-60"
+            className="rounded-2xl border border-white/20 bg-white/15 px-3 text-white transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <SendHorizonal size={16} />
           </button>
