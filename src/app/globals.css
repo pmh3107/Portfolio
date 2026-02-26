@@ -23,6 +23,35 @@ body {
   line-height: 1.6;
 }
 
+.liquid-blob {
+  animation: liquid-float 18s ease-in-out infinite;
+}
+
+.liquid-blob-reverse {
+  animation: liquid-float-reverse 22s ease-in-out infinite;
+}
+
+.liquid-blob-slow {
+  animation: liquid-float-slow 28s ease-in-out infinite;
+}
+
+@keyframes liquid-float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  35% { transform: translate3d(40px, -35px, 0) scale(1.08); }
+  70% { transform: translate3d(-30px, 50px, 0) scale(0.95); }
+}
+
+@keyframes liquid-float-reverse {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  40% { transform: translate3d(-55px, 45px, 0) scale(1.12); }
+  75% { transform: translate3d(30px, -40px, 0) scale(0.94); }
+}
+
+@keyframes liquid-float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(60px, -20px, 0) scale(1.1); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
