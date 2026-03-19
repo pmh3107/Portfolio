@@ -1,0 +1,102 @@
+{
+  "name": "Phan Minh Hiển",
+  "title": {
+    "vi": "Kỹ sư phần mềm Mobile & Web",
+    "en": "Mobile & Web Software Engineer"
+  },
+  "tagline": {
+    "vi": "Xây dựng sản phẩm công nghệ bền vững với tư duy sản phẩm và tinh thần tử tế.",
+    "en": "Building technology products with a product mindset, kindness, and mindfulness."
+  },
+  "location": {
+    "vi": "Quy Nhơn, Bình Định / TP.HCM, Việt Nam",
+    "en": "Quy Nhon, Binh Dinh / Ho Chi Minh City, Vietnam"
+  },
+  "about": {
+    "vi": "Tôi là kỹ sư phần mềm có kinh nghiệm liên lĩnh vực Mobile, Web và Viễn thông. Tôi coi công nghệ không chỉ là code mà còn là công cụ tạo ra giá trị thực tế cho con người. Tôi tập trung vào kiến trúc sạch, hiệu năng và trải nghiệm người dùng.",
+    "en": "I am a software engineer with cross-domain experience in mobile, web, and telecommunications. I treat technology as more than code: a practical tool for delivering meaningful outcomes. I focus on clean architecture, performance, and user experience."
+  },
+  "avatar": {
+    "src": "/headshot-placeholder.svg",
+    "alt": {
+      "vi": "Ảnh đại diện của Phan Minh Hiển",
+      "en": "Portrait of Phan Minh Hien"
+    }
+  },
+  "contact": {
+    "email": "phanminhhien0701@gmail.com",
+    "phone": "0917 779 407"
+  },
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/hienphan"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/hienphan"
+    }
+  ],
+  "skills": [
+    {
+      "category": {
+        "vi": "Ngôn ngữ",
+        "en": "Languages"
+      },
+      "items": ["Kotlin", "Java", "TypeScript", "JavaScript"]
+    },
+    {
+      "category": {
+        "vi": "Mobile",
+        "en": "Mobile"
+      },
+      "items": ["Android SDK", "MVVM", "Coroutines", "Jetpack Compose", "React Native"]
+    },
+    {
+      "category": {
+        "vi": "Web & Viễn thông",
+        "en": "Web & Telecom"
+      },
+      "items": ["Next.js", "React", "Tailwind CSS", "WebSockets"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "TMA Solutions",
+      "period": "03/2025 - Present",
+      "role": {
+        "vi": "Kỹ sư phần mềm Mobile",
+        "en": "Mobile Software Engineer"
+      },
+      "projects": [
+        {
+          "name": "Duress",
+          "description": {
+            "vi": "Ứng dụng an toàn cá nhân dùng Kotlin, MVVM, Google Maps và foreground service.",
+            "en": "Safety application using Kotlin, MVVM, Google Maps, and foreground services."
+          },
+          "technologies": ["Kotlin", "MVVM", "Google Maps", "Foreground Service"]
+        },
+        {
+          "name": "Cirpack",
+          "description": {
+            "vi": "Sản phẩm OTT viễn thông với React Native, WebSockets và native modules Android.",
+            "en": "OTT telecom product built with React Native, WebSockets, and Android native modules."
+          },
+          "technologies": ["React Native", "WebSockets", "Android Native Modules"]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Transport Ho Chi Minh City",
+      "period": "2020 - 2024",
+      "degree": {
+        "vi": "Kỹ sư Công nghệ thông tin",
+        "en": "Bachelor of Information Technology Engineering"
+      },
+      "gpa": "3.27/4.0"
+    }
+  ]
+}
