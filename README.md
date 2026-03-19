@@ -1,6 +1,6 @@
-# Portfolio (React + Vite + TypeScript)
+# Portfolio (Next.js + TypeScript)
 
-This project deploys to **GitHub Pages** using a dedicated publishing branch named **`gh-page`**.
+This project deploys to **GitHub Pages** using the dedicated publishing branch **`gh-page`**.
 
 ## Local development
 
@@ -9,11 +9,13 @@ npm install
 npm run dev
 ```
 
-## Production build
+## Production build (static export)
 
 ```bash
 npm run build
 ```
+
+The build uses `next build` with `output: "export"` and generates static files in `out/`.
 
 ## GitHub Pages deployment from `main`
 
@@ -22,12 +24,14 @@ A GitHub Actions workflow is included at `.github/workflows/deploy-gh-page.yml`.
 - Trigger: push to `main` (or manual run via **workflow_dispatch**)
 - Build: `npm ci` + `npm run build`
 - Publish target branch: `gh-page`
+- Publish directory: `out/`
 
 The workflow sets:
 
-- `VITE_BASE_PATH=/<repository-name>/`
+- `GITHUB_ACTIONS=true`
+- `GITHUB_REPOSITORY=<owner>/<repo>`
 
-So the app is built with the correct asset base path for project pages.
+The Next.js config reads this to automatically set the correct `basePath`/`assetPrefix` for GitHub project pages.
 
 ## First-time GitHub setup checklist
 
