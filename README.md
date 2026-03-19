@@ -34,29 +34,10 @@ npm run build
 npm run export
 ```
 
-## Build + Deploy (main -> gh-pages)
+## Static export
 
-Workflow đã được thêm tại:
+One command:
 
-- `.github/workflows/deploy-gh-pages.yml`
-
-Khi push vào `main`, GitHub Actions sẽ:
-
-1. Build static output (`out/`)
-2. Push nội dung `out/` vào branch `gh-pages`
-
-### GitHub Pages URL
-
-Sau khi bật Pages (Source = `Deploy from a branch`, branch = `gh-pages`):
-
-```text
-https://<github-username>.github.io/<repo-name>/
+```bash
+npm run export
 ```
-
-Ví dụ repo `Portfolio`:
-
-```text
-https://<github-username>.github.io/Portfolio/
-```
-
-`next.config.ts` đã tự động set `basePath`/`assetPrefix` theo tên repo khi chạy trong GitHub Actions, nên dùng chung code cho local + gh-pages.
