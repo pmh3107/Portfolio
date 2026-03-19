@@ -5,9 +5,8 @@ const shouldUseBasePath = Boolean(process.env.GITHUB_ACTIONS && repositoryName);
 const basePath = shouldUseBasePath ? `/${repositoryName}` : "";
 
 const nextConfig: NextConfig = {
-  output: "export",
   images: {
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
   },
   basePath,
   assetPrefix: shouldUseBasePath ? `${basePath}/` : undefined,
