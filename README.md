@@ -1,41 +1,42 @@
 # Portfolio (Next.js + TypeScript)
 
-This project deploys to **GitHub Pages** using the dedicated publishing branch **`gh-page`**.
+Modern portfolio app built with Next.js App Router, Tailwind CSS, i18n (`vi` + `en`), SEO metadata, and admin editing.
 
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-## Production build (static export)
+## Production build
 
 ```bash
 npm run build
+npm start
 ```
 
-The build uses `next build` with `output: "export"` and generates static files in `out/`.
+## Required environment variables
 
-## GitHub Pages deployment from `main`
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+ADMIN_USERNAME=your-admin-user
+ADMIN_PASSWORD=your-admin-password
+GEMINI_API_KEY=your-gemini-key
+```
 
-A GitHub Actions workflow is included at `.github/workflows/deploy-gh-page.yml`.
+## Optional (only when deploying under a subpath)
 
-- Trigger: push to `main` (or manual run via **workflow_dispatch**)
-- Build: `npm ci` + `npm run build`
-- Publish target branch: `gh-page`
-- Publish directory: `out/`
+If your app is deployed under a repository path such as `https://domain.com/my-portfolio`, set:
 
-The workflow sets:
+```bash
+NEXT_PUBLIC_BASE_PATH=/my-portfolio
+```
 
-- `GITHUB_ACTIONS=true`
-- `GITHUB_REPOSITORY=<owner>/<repo>`
+If your app is deployed at the domain root (`https://domain.com`), **leave `NEXT_PUBLIC_BASE_PATH` empty**.
 
-The Next.js config reads this to automatically set the correct `basePath`/`assetPrefix` for GitHub project pages.
+## Why 404 can happen after deploy
 
-## First-time GitHub setup checklist
+A common reason is incorrect `basePath`/`assetPrefix` configuration. If the app thinks it is under `/repo-name` but the host serves it from `/`, static files under `/_next/...` are requested from the wrong URL and return `404`.
 
-1. Push this repo to GitHub.
-2. Ensure your default branch is `main`.
-3. In **Settings → Pages**, choose **Deploy from a branch** and select `gh-page` + `/ (root)`.
-4. Push to `main` (or run the workflow manually).
+This project now uses explicit `NEXT_PUBLIC_BASE_PATH` so deployment behavior is deterministic across Vercel, VPS, and GitHub Pages.
