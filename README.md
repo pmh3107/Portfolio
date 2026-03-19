@@ -1,43 +1,29 @@
-# Smart AI Portfolio - Phan Minh Hiển
+# Portfolio (React + Vite + TypeScript)
 
-Next.js App Router + TypeScript + TailwindCSS + Framer Motion + Gemini API.
+This project is configured to deploy to **GitHub Pages** using a dedicated publishing branch named **`gh-page`**.
 
-## Clean Architecture (src/)
-
-- `src/app`: routes, layout, API route
-- `src/components`: UI & sections & AI widgets
-- `src/core`: domain types + constants
-- `src/data`: typed CV data source
-- `src/services`: client services (call internal API)
-
-## Setup
+## Local development
 
 ```bash
 npm install
-cp .env.example .env.local
 npm run dev
 ```
 
-## Environment
+## Build
 
 ```bash
-GEMINI_API_KEY=your_key_here
-```
-
-## Scripts
-
-```bash
-npm run dev
-npm run lint
-npm run type-check
 npm run build
-npm run export
 ```
 
-## Static export
-
-One command:
+## Deploy to GitHub Pages (`gh-page` branch)
 
 ```bash
-npm run export
+npm run deploy
 ```
+
+What the deploy command does:
+
+1. Runs `npm run build` to generate the production bundle in `dist/`.
+2. Publishes the `dist/` output to the `gh-page` branch.
+
+> If your repository name is not `Portfolio`, update `base` in `vite.config.ts` to match `/<your-repo-name>/`.
