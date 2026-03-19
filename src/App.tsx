@@ -27,7 +27,9 @@ function App() {
 				</div>
 			),
 		},
-	]);
+	], {
+		basename: import.meta.env.BASE_URL,
+	});
 	return <RouterProvider router={router} />;
 }
 
