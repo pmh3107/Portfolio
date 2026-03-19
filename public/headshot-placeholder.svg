@@ -1,0 +1,13 @@
+<svg width="420" height="500" viewBox="0 0 420 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="500" rx="24" fill="url(#bg)"/>
+  <circle cx="210" cy="182" r="92" fill="#E2E8F0"/>
+  <path d="M78 436C96 334 147 283 210 283C273 283 324 334 342 436" fill="#CBD5E1"/>
+  <rect x="24" y="24" width="372" height="452" rx="18" stroke="#94A3B8" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="210" y="462" text-anchor="middle" fill="#475569" font-size="18" font-family="Arial, sans-serif">Professional Headshot Placeholder</text>
+  <defs>
+    <linearGradient id="bg" x1="35" y1="36" x2="377" y2="477" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF2FF"/>
+      <stop offset="1" stop-color="#CCFBF1"/>
+    </linearGradient>
+  </defs>
+</svg>

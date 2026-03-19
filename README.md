@@ -1,52 +1,62 @@
-# React + TypeScript + Vite
+# Smart AI Portfolio - Phan Minh Hiển
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Next.js App Router + TypeScript + TailwindCSS + Framer Motion + Gemini API.
 
-Currently, two official plugins are available:
+## Clean Architecture (src/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `src/app`: routes, layout, API route
+- `src/components`: UI & sections & AI widgets
+- `src/core`: domain types + constants
+- `src/data`: typed CV data source
+- `src/services`: client services (call internal API)
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Environment
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+GEMINI_API_KEY=your_key_here
 ```
-# Portfolio
-# Portfolio
+
+## Scripts
+
+```bash
+npm run dev
+npm run lint
+npm run type-check
+npm run build
+npm run export
+```
+
+## Build + Deploy (main -> gh-pages)
+
+Workflow đã được thêm tại:
+
+- `.github/workflows/deploy-gh-pages.yml`
+
+Khi push vào `main`, GitHub Actions sẽ:
+
+1. Build static output (`out/`)
+2. Push nội dung `out/` vào branch `gh-pages`
+
+### GitHub Pages URL
+
+Sau khi bật Pages (Source = `Deploy from a branch`, branch = `gh-pages`):
+
+```text
+https://<github-username>.github.io/<repo-name>/
+```
+
+Ví dụ repo `Portfolio`:
+
+```text
+https://<github-username>.github.io/Portfolio/
+```
+
+`next.config.ts` đã tự động set `basePath`/`assetPrefix` theo tên repo khi chạy trong GitHub Actions, nên dùng chung code cho local + gh-pages.
