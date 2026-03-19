@@ -1,6 +1,6 @@
 # Portfolio (React + Vite + TypeScript)
 
-This project is configured to deploy to **GitHub Pages** using a dedicated publishing branch named **`gh-page`**.
+This project deploys to **GitHub Pages** using a dedicated publishing branch named **`gh-page`**.
 
 ## Local development
 
@@ -9,21 +9,29 @@ npm install
 npm run dev
 ```
 
-## Build
+## Production build
 
 ```bash
 npm run build
 ```
 
-## Deploy to GitHub Pages (`gh-page` branch)
+## GitHub Pages deployment from `main`
 
-```bash
-npm run deploy
-```
+A GitHub Actions workflow is included at `.github/workflows/deploy-gh-page.yml`.
 
-What the deploy command does:
+- Trigger: push to `main` (or manual run via **workflow_dispatch**)
+- Build: `npm ci` + `npm run build`
+- Publish target branch: `gh-page`
 
-1. Runs `npm run build` to generate the production bundle in `dist/`.
-2. Publishes the `dist/` output to the `gh-page` branch.
+The workflow sets:
 
-> If your repository name is not `Portfolio`, update `base` in `vite.config.ts` to match `/<your-repo-name>/`.
+- `VITE_BASE_PATH=/<repository-name>/`
+
+So the app is built with the correct asset base path for project pages.
+
+## First-time GitHub setup checklist
+
+1. Push this repo to GitHub.
+2. Ensure your default branch is `main`.
+3. In **Settings → Pages**, choose **Deploy from a branch** and select `gh-page` + `/ (root)`.
+4. Push to `main` (or run the workflow manually).
